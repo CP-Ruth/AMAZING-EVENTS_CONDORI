@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* ............................BARRA DE NAVEGACION............................*/
+.container-fluid{
+    display: flex;
+}
+#navbarNav{
+    justify-content: end;
+}
+h1{
+    margin: 0;
+    background-color: #FF5F9E;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+/*............................BARRA DE FILTRO Y BUSQUEDA............................*/
+  /* los "style! del html deben estar aca pero no me lo toma*/
