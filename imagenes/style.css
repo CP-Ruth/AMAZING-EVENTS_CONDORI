@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+#body {
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+    flex-direction: column;
+  }
 
 /* ...............................BARRA DE NAVEGACION...............................*/
 .container-fluid{
@@ -19,7 +25,7 @@ h1{
     display: flex;
     justify-content: center;
 }
-/*............................BARRA DE FILTRO Y BUSQUEDA............................*/
+/*..........BARRA DE FILTRO Y BUSQUEDA(en realidad para todos los botones)..........*/
 .btn{
     background-color: #ff5f9f7c;
     color: aliceblue;
@@ -27,9 +33,20 @@ h1{
 }
 
 /*....................................TARJETAS....................................*/
-/*#tarjetas{
-    margin: 40px 0px; 
-}*/
+#tarjetas{
+    background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;; 
+}
+
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 /*...................................COMENTARIOS...................................*/
 
