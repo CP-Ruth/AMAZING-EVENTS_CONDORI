@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 /* ............................BARRA DE NAVEGACION............................*/
 .container-fluid{
     display: flex;
@@ -12,10 +13,29 @@
 }
 h1{
     margin: 0;
+    padding: 0;
     background-color: #FF5F9E;
     color: aliceblue;
     display: flex;
     justify-content: center;
 }
 /*............................BARRA DE FILTRO Y BUSQUEDA............................*/
+.btn{
+    background-color: #ff5f9f7c;
+    color: aliceblue;
+
+}
   /* los "style! del html deben estar aca pero no me lo toma*/
+/*............................FOOTER............................*/
+footer{
+    background-color: #FF5F9E;
+    /*display: grid;*/
+    padding: 10px;
+}
+svg{
+    height: 30px;
+    width: 30px;
+    color: aliceblue;
+    margin: 0 10px;
+
+}
