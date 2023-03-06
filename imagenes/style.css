@@ -8,7 +8,8 @@
     height: 100vh;
     justify-content: space-between;
     flex-direction: column;
-  }
+}
+
 
 /* ...............................BARRA DE NAVEGACION...............................*/
 .container-fluid{
@@ -16,6 +17,9 @@
 }
 #navbarNav{
     justify-content: end;
+}
+ul  li{ 
+   margin: 0 15px;
 }
 h1{
     margin: 0;
@@ -50,13 +54,6 @@ h1{
 
 /*...................................COMENTARIOS...................................*/
 
-/*  GRID
- no puedo modificar nada, la pantalla esta dividida  
-en columnas predeterminadas y tengoq ue modificarlo deacuerdo a eso
-form{
-    margin: 120PX 50px;
-}*/
-
 
 
 /*.....................................FOOTER.....................................*/
@@ -64,6 +61,8 @@ footer{
     background-color: #FF5F9E;
     /*display: grid;*/
     padding: 10px;
+    display: grid;
+    justify-items: center;
 }
 svg{
     height: 30px;
