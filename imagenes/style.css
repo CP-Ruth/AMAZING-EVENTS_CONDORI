@@ -36,12 +36,13 @@ h1{
 
 }
 
+main{
+    margin: 10px ;
+}
 /*....................................TARJETAS....................................*/
-#tarjetas{
-    background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;; 
+#elementos{
+   margin-top: 0;
+
 }
 
 
