@@ -13,7 +13,7 @@ for (evento of data.events) {
       </div>
       <div class="card-footer">
         <small class="text-muted">$${evento.price}</small>
-        <a href="#" class="btn">Details</a>
+        <a href="./details.html" class="btn">Details</a>
       </div>    
   </div>
   </div>`
