@@ -39,6 +39,10 @@ h1{
 main{
     margin: 10px;
 }
+#checkboxs{
+    display: flex;
+    justify-content: space-evenly;
+}
 /*....................................TARJETAS....................................*/
 #elementos{
    margin-top: 0;
