@@ -17,7 +17,7 @@ divdetalleTarjeta.innerHTML = `
         <p class="card-text">${evento.description}</p>
         <p class="card-text">FECHA: ${evento.date}</p>
         <p class="card-text">LUGAR: ${evento.place}</p>
-        <p class="card-text">CAPACIDAD ${evento.capacity}</p>
+        <p class="card-text">CAPACIDAD: ${evento.capacity}</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">$${evento.price}</small>
