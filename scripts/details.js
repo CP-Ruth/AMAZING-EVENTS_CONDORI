@@ -8,33 +8,26 @@ let evento = data.events.find(event =>event._id == id)
 const divdetalleTarjeta = document.getElementById('detalleTarjeta')
 
 divdetalleTarjeta.innerHTML = `
-<div class="card" style="width: 40rem;">
-      <img src="${evento.image}" class="card-img-top" alt="${evento.name}">
+<div class="row row-cols-1 row-cols-md-3 g-4" id="elementos">
+  <div class="col">
+    <div class="card h-100">
+      <img class="card-img-top" src="${evento.image}" alt="${evento.category}">
       <div class="card-body">
         <h5 class="card-title">${evento.name}</h5>
         <p class="card-text">${evento.description}</p>
-        <p class="card-text">Fecha: ${evento.date}</p>
-        <p class="card-text">Lugar: ${evento.place}</p>
-        <p class="card-text">Capacidad: ${evento.capacity}</p>
+        <p class="card-text">FECHA: ${evento.date}</p>
+        <p class="card-text">LUGAR: ${evento.place}</p>
+        <p class="card-text">CAPACIDAD ${evento.capacity}</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">$${evento.price}</small>
         <a href="./index.html" class="btn">Volver a Home</a>
-      </div>
+      </div>   
+  </div>
+  </div>
+
 </div>
 `
-
-/*
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-*/
-
 
 /*
  _id: 1,
