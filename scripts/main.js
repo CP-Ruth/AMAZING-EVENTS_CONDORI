@@ -1,23 +1,24 @@
 // CHECKBOXS
 const divCheckboxs = document.getElementById('checkboxs')
 
+
 function checksCategorias(arrcateg) {
 
-    let categoriasTodas = arrcateg.map(evento => evento.category)
-    let categoriasSet = new Set(categoriasTodas)
-    let categoriasArr = Array.from(categoriasSet)
-    console.log(categoriasArr)
-    let checks = " "
-    categoriasArr.forEach(category => {
-        checks += `
+  let categoriasTodas = arrcateg.map(evento => evento.category)
+  let categoriasSet = new Set(categoriasTodas)
+  let categoriasArr = Array.from(categoriasSet)
+  console.log(categoriasArr)
+  let checks = " "
+  categoriasArr.forEach(category => {
+    checks += `
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
       <label class="form-check-label" for="${category}"> ${category}</label>
- </div>`
-    })
-    divCheckboxs.innerHTML = checks
-
+    </div>`
+  })
+  divCheckboxs.innerHTML = checks
 }
+
 checksCategorias(data.events)
 
 // Tarjetas--------------------------------------------------------------------------------------------
@@ -25,15 +26,15 @@ checksCategorias(data.events)
 const divElementos = document.getElementById('elementos')
 
 function tarjetasEventos(xxx) {
-    if (xxx.length == 0) {
-        divElementos.innerHTML = `<p>No hay coincidencias</p>`
-        return
-    }
+  if (xxx.length == 0) {
+    divElementos.innerHTML = `<p>No hay coincidencias</p>`
+    return
+  }
 
-    let tarjetas = " "
+  let tarjetas = " "
 
-    xxx.forEach(evento => {
-        tarjetas += `<div class="col">
+  xxx.forEach(evento => {
+    tarjetas += `<div class="col">
     <div class="card h-100">
       <img class="card-img-top" src="${evento.image}" alt="${evento.category}">
       <div class="card-body">
@@ -46,7 +47,7 @@ function tarjetasEventos(xxx) {
       </div>    
   </div>
   </div>`})
-    divElementos.innerHTML = tarjetas;
+  divElementos.innerHTML = tarjetas;
 }
 
 tarjetasEventos(data.events)
@@ -61,33 +62,33 @@ divCheckboxs.addEventListener('change', filtroCombinado)
 // Filtro por search-----------------------------------------------------------------------------------
 
 function filtroSearch(array, text) {
-    let arrayFiltrado = array.filter(evento => evento.name.toLowerCase().includes(text.toLowerCase()))
-    return arrayFiltrado
+  let arrayFiltrado = array.filter(evento => evento.name.toLowerCase().includes(text.toLowerCase()))
+  return arrayFiltrado
 }
 
 
 // Filtro por checkboxes------------------------------------------------------------------------------
 
-function filotroSeleccionChecks(array){
-    let cajitasChecks = document.querySelectorAll("input[type='checkbox']")
-    let arrayCajitasCheckeadas= Array.from(cajitasChecks)
-    let cajitasCheckeadas = arrayCajitasCheckeadas.filter(check => check.checked)
-    let valuesChecks = cajitasCheckeadas.map(checkeado => checkeado.value)
+function filotroSeleccionChecks(array) {
+  let cajitasChecks = document.querySelectorAll("input[type='checkbox']")
+  let arrayCajitasCheckeadas = Array.from(cajitasChecks)
+  let cajitasCheckeadas = arrayCajitasCheckeadas.filter(check => check.checked)
+  let valuesChecks = cajitasCheckeadas.map(checkeado => checkeado.value)
 
-    let arrayFiltrados= array.filter(elemento => valuesChecks.includes(elemento.category))
-    if(valuesChecks.length > 0){
-        return arrayFiltrados
-    }
-    return array    
+  let arrayFiltrados = array.filter(elemento => valuesChecks.includes(elemento.category))
+  if (valuesChecks.length > 0) {
+    return arrayFiltrados
+  }
+  return array
 }
 
 
 // Filtros combinados------------------------------------------------------------------------------
 
-function filtroCombinado(){
-    let filtroUno= filtroSearch(data.events,input.value)
-    let filtroDos= filotroSeleccionChecks(filtroUno)
-    tarjetasEventos(filtroDos)
+function filtroCombinado() {
+  let filtroUno = filtroSearch(data.events, input.value)
+  let filtroDos = filotroSeleccionChecks(filtroUno)
+  tarjetasEventos(filtroDos)
 }
 
 
