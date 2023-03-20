@@ -1,13 +1,23 @@
 const querySearch = location.search
-const param= new URLSearchParams(querySearch)
+const param = new URLSearchParams(querySearch)
 const id = param.get("id")
 
+//---------------------------------------------------------------------------------------------
+async function traerDatos() {
 
-let evento = data.events.find(event =>event._id == id)
+  const data = await fetch("https://mindhub-xj03.onrender.com/api/amazing ").then(datos => datos.json())
+    .then(data => { return data })
+  return data
+}
 
 const divdetalleTarjeta = document.getElementById('detalleTarjeta')
 
-divdetalleTarjeta.innerHTML = `
+async function iniciar() {
+  let data = await traerDatos()
+  let evento = data.events.find(event => event._id == id)
+
+
+  divdetalleTarjeta.innerHTML = `
 <div class="row row-cols-1 row-cols-md-3 g-4" id="elementos">
   <div class="col">
     <div class="card h-100">
@@ -28,6 +38,15 @@ divdetalleTarjeta.innerHTML = `
 
 </div>
 `
+}
+
+
+iniciar()
+
+
+
+
+
 
 /*
  _id: 1,

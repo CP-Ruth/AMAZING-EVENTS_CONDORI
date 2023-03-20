@@ -1,9 +1,15 @@
+// API -------------------------------------------------------------------------------------------------
+async function traerDatos() {
+
+  const data = await fetch("https://mindhub-xj03.onrender.com/api/amazing ").then(datos => datos.json())
+    .then(data => { return data })
+    return data
+}
+
 // CHECKBOXS
 const divCheckboxs = document.getElementById('checkboxs')
 
-
 function checksCategorias(arrcateg) {
-
   let categoriasTodas = arrcateg.map(evento => evento.category)
   let categoriasSet = new Set(categoriasTodas)
   let categoriasArr = Array.from(categoriasSet)
@@ -11,15 +17,15 @@ function checksCategorias(arrcateg) {
   let checks = " "
   categoriasArr.forEach(category => {
     checks += `
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
-      <label class="form-check-label" for="${category}"> ${category}</label>
-    </div>`
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
+        <label class="form-check-label" for="${category}"> ${category}</label>
+      </div>`
   })
   divCheckboxs.innerHTML = checks
 }
 
-checksCategorias(data.events)
+//checksCategorias(data.events)
 
 // Tarjetas--------------------------------------------------------------------------------------------
 
@@ -50,13 +56,14 @@ function tarjetasEventos(xxx) {
   divElementos.innerHTML = tarjetas;
 }
 
-tarjetasEventos(data.events)
+//tarjetasEventos(data.events)
 
 
 // Para los filtros------------------------------------------------------------------------------------
+
 const input = document.querySelector('input')
-input.addEventListener('input', filtroCombinado)
-divCheckboxs.addEventListener('change', filtroCombinado)
+//input.addEventListener('input', filtroCombinado)
+//divCheckboxs.addEventListener('change', filtroCombinado)
 
 
 // Filtro por search-----------------------------------------------------------------------------------
@@ -85,12 +92,30 @@ function filotroSeleccionChecks(array) {
 
 // Filtros combinados------------------------------------------------------------------------------
 
-function filtroCombinado() {
-  let filtroUno = filtroSearch(data.events, input.value)
-  let filtroDos = filotroSeleccionChecks(filtroUno)
-  tarjetasEventos(filtroDos)
+/* Aca no lo tengo bien claro ESTUDIAR */
+
+
+
+
+async function iniciar() {
+  let data = await traerDatos()
+  console.log(data)
+  checksCategorias(data.events)
+  tarjetasEventos(data.events)
+
+  function filtroCombinado() {
+    let filtroUno = filtroSearch(data.events, input.value)
+    let filtroDos = filotroSeleccionChecks(filtroUno)
+    tarjetasEventos(filtroDos)
+  }
+
+  input.addEventListener('input', filtroCombinado)
+  divCheckboxs.addEventListener('change', filtroCombinado)
+
 }
 
+
+iniciar()
 
 
 
