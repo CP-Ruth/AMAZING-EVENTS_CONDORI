@@ -25,15 +25,13 @@ function checksCategorias(arrcateg) {
   })
   divCheckboxs.innerHTML = checks
 }
-//checksCategorias(data.events)
-
 
 // Tarjetas--------------------------------------------------------------------------------------------
 const divElementos = document.getElementById('elementos')
 
 function tarjetasEventos(xxx) {
   if (xxx.events.length == 0) {
-    divElementos.innerHTML = `<p>No hay coincidencias</p>`
+    divElementos.innerHTML = `<p>No results</p>`
     return
   }
   let tarjetas = " "

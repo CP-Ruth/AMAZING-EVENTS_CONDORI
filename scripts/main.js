@@ -25,15 +25,12 @@ function checksCategorias(arrcateg) {
   divCheckboxs.innerHTML = checks
 }
 
-//checksCategorias(data.events)
-
 // Tarjetas--------------------------------------------------------------------------------------------
-
 const divElementos = document.getElementById('elementos')
 
 function tarjetasEventos(xxx) {
   if (xxx.length == 0) {
-    divElementos.innerHTML = `<p>No hay coincidencias</p>`
+    divElementos.innerHTML = `<p>No results</p>`
     return
   }
 
@@ -56,23 +53,14 @@ function tarjetasEventos(xxx) {
   divElementos.innerHTML = tarjetas;
 }
 
-//tarjetasEventos(data.events)
-
-
 // Para los filtros------------------------------------------------------------------------------------
-
 const input = document.querySelector('input')
-//input.addEventListener('input', filtroCombinado)
-//divCheckboxs.addEventListener('change', filtroCombinado)
-
 
 // Filtro por search-----------------------------------------------------------------------------------
-
 function filtroSearch(array, text) {
   let arrayFiltrado = array.filter(evento => evento.name.toLowerCase().includes(text.toLowerCase()))
   return arrayFiltrado
 }
-
 
 // Filtro por checkboxes------------------------------------------------------------------------------
 
@@ -89,13 +77,7 @@ function filotroSeleccionChecks(array) {
   return array
 }
 
-
 // Filtros combinados------------------------------------------------------------------------------
-
-/* Aca no lo tengo bien claro ESTUDIAR */
-
-
-
 
 async function iniciar() {
   let data = await traerDatos()
